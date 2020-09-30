@@ -1,0 +1,20 @@
+{% extends 'PK_Generator/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+        <h4 class='text-center'>Setup</h4>
+        <form action='{% url 'password' %}'>
+          <label>Password length</label><input type='number' name='length' value='10'>
+          
+          <input type='switch' name='lowercase' checked><label>lowercase</label><br>
+          <input type='switch' name='uppercase'><label>uppercase</label><br>
+          <input type='switch' name='numbers'><label>numbers</label><br>
+          <input type='switch' name='special'><label>special characters</label><br>
+          <input type='switch' name='excludesimilar'><label>exclude similar characters</label><br>
+          
+          <button class='button'>GENERATE</button>
+        </form>
+
+{% endblock %}

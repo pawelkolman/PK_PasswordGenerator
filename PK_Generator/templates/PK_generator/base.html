@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/png' href='{% static 'app_icon.png'%}'>
+    <meta name='theme-color' content='#2cb172'/>
+    <title>{% block title %}{% endblock %} - PK_PasswordGenerator</title>
+    <link rel="stylesheet" href="{% static 'PK_CSS.css' %}">
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-9 large-6 cell float-center">
+    
+          <a href="{% url 'home' %}">{% include 'PK_Generator/app_logo.svg' %}</a>
+          <div class="card">
+            {% block content %}
+            {% endblock %}
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <footer class='text-center'>{% include 'PK_Generator/pk_logo.svg' %}<a href='https://pawelkolman.github.io'>pawelkolman.github.io</a></footer>
+    <script src="{% static 'PK_JS.js' %}"></script>
+  </body>
+</html>
