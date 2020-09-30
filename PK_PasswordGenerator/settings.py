@@ -26,7 +26,7 @@ except ImportError:
     print('No secret settings file. Project is running online.')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['PKPasswordGenerator.pythonanywhere.com']
 try:
     from .local_settings import *
