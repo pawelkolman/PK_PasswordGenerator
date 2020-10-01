@@ -10,7 +10,7 @@ def password(request):
     
     characters = []
     
-    length = int(request.GET.get('length', 10)) # '10' is a default parameter
+    length = int(request.GET.get('length', 10)) # take 10 as a default value
     
     if request.GET.get('lowercase'):
         characters.extend(list('abcdefghijklmnopqrstuvwxyz'))
@@ -31,7 +31,8 @@ def password(request):
                 characters.remove(char)
     
     password = ''
-    for i in range(length):
-        password += random.choice(characters)
+    if characters:
+        for i in range(length):
+            password += random.choice(characters)
     
     return render(request, 'PK_Generator/password.html', {'password':password})
