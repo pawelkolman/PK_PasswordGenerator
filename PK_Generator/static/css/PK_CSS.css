@@ -1,0 +1,169 @@
+/* -------------------------------- variables ------------------------------- */
+
+:root {
+  --primary-color: #2cb172;
+  --primary-color-darker: #228758;
+  --dark-color: #1d1d1d;
+  --dark-color-darker: #121212;
+}
+
+
+
+
+
+/* --------------------------------- general -------------------------------- */
+::selection {
+  background: var(--primary-color);
+}
+
+body {
+  background: #eee;
+}
+
+a {
+  line-height: inherit;
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+  a:hover, a:focus {
+    color: var(--primary-color-darker);
+  }
+
+.border {
+  padding: .5rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+/* ---------------------------------- PK_app -------------------------------- */
+.PK_pk_logo {
+  width: 25px;
+  height: 25px;
+  margin-right: 0.5rem;
+  position: relative;
+  bottom: -0.5rem;
+}
+
+path.PK_pk_logo_path {
+  fill: var(--primary-color) !important;
+}
+
+.PK_app_logo {
+  max-width: 300px;
+  display: block;
+  margin: 2rem auto;
+}
+
+path.PK_app_logo-color-primary {
+  fill: var(--primary-color) !important;
+}
+
+path.PK_app_logo-color-neutral {
+  fill: var(--dark-color) !important;
+}
+
+footer {
+  margin: 0 0 1rem 0;
+}
+
+footer a.footer-link {
+    position: relative;
+    top: .5rem;
+}
+
+
+
+
+
+/* ---------------------------------- forms --------------------------------- */
+.btn-primary, .btn-primary:hover, .btn-primary:active {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
+  .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    border-color: var(--primary-color-darker) !important;
+    background-color: var(--primary-color-darker) !important;
+    box-shadow: none !important;
+  }
+
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  padding: .25em;
+  margin-bottom: 1rem;
+  outline: none;
+}
+
+.custom-switch {
+  margin-bottom: 1rem;
+}
+  .custom-switch .custom-control-label::before {
+    border-radius: .25rem;
+    width: 3rem;
+    height: 1.5rem;
+    left: -3.5rem;
+    box-shadow: none !important;
+    border-color: #ccc !important;
+  }
+  .custom-switch .custom-control-input:checked~.custom-control-label::before {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+  }
+  .custom-switch .custom-control-label {
+    left: 1.25rem;
+  }
+  .custom-switch .custom-control-label::after {
+    top: calc(.3rem + 4px);
+    left: calc(-3.5rem + 4px);
+    width: calc(1.3rem - 4px);
+    height: calc(1.3rem - 4px);
+    border-radius: .25rem;
+  }
+  .custom-switch .custom-control-input:checked~.custom-control-label::after {
+    transform: translateX(1.5rem);
+  }
+
+
+
+
+
+/* ------------------------------- dark theme ------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  path.PK_app_logo-color-neutral {
+      fill: #fff !important; }
+      
+  body {
+    background: var(--dark-color-darker);
+    color: #fff; }
+
+  .card {
+    background: var(--dark-color);
+    box-shadow: none;
+    color: #fff; }
+  
+  .callout {
+    background: inherit;
+    border: 1px solid #ccc;
+    color: #fff;
+  }
+
+  label {
+    color: #fff; }
+
+  input, input:focus {
+    color: #fff !important;
+    background: inherit !important;
+    border-color: #fff;
+  }
+  
+  .custom-switch .custom-control-label::before {
+    background: #4d4d4d;
+    border-color: #4d4d4d !important; }
+}
